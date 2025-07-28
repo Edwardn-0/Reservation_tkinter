@@ -17,9 +17,9 @@ def reserve_setting():
     global name, confirm, purp
     label_name = tk.Label(setting, text='NAME: ')
     name = tk.Entry(setting)
-    label_purp = tk.Label(setting, text='목적')
+    label_purp = tk.Label(setting, text='PURPOSE')
     purp = tk.Entry(setting)
-    confirm = tk.Button(setting, text='등록', command=reserving)
+    confirm = tk.Button(setting, text='CONFIRM', command=reserving)
 
     label_name.grid(row=0,column=0)
     name.grid(row=0,column=1)
@@ -32,8 +32,8 @@ def already_setting(table_num):
     label_name = tk.Label(checked, text='NAME: ')
     set_name = table_num.cget('text')
     set_name = tk.Label(checked, text=set_name)
-    label_purp = tk.Label(checked, text='목적')
-    set_purp = getattr(table_num, 'purpose', '없음')
+    label_purp = tk.Label(checked, text='PURPOSE')
+    set_purp = getattr(table_num, 'purpose', 'NONE')
     set_purp = tk.Label(checked, text=set_purp)
 
     label_name.grid(row=0,column=0)
